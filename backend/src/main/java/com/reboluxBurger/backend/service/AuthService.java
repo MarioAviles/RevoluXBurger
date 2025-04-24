@@ -3,7 +3,7 @@ package com.reboluxBurger.backend.service;
 import com.reboluxBurger.backend.dto.AuthLoginRequest;
 import com.reboluxBurger.backend.dto.AuthRequest;
 import com.reboluxBurger.backend.dto.AuthResponse;
-import com.reboluxBurger.backend.entity.Reservation;
+import com.reboluxBurger.backend.dto.ReservationRequest;
 import com.reboluxBurger.backend.entity.User;
 import com.reboluxBurger.backend.enums.Role;
 import com.reboluxBurger.backend.repository.ReservationRepository;
@@ -50,6 +50,9 @@ public class AuthService {
         user.setPassword(passwordEncoder.encode(request.getPassword()));
         user.setEmail(request.getEmail());
 
+        Long points = request.getPoints() == null ? 0 : request.getPoints();
+        user.setPoints(points);
+
         Role role = (request.getRole() == null || request.getRole().describeConstable().isEmpty()) ? Role.USER : request.getRole();
         user.setRole(role);
 
@@ -59,7 +62,7 @@ public class AuthService {
     public List<AuthRequest> getAllUsers() {
         User currentUser = getCurrentUser();
         if (currentUser.getRole() == Role.ADMIN) {
-            return userRepository.findAll().stream().map(user -> new AuthRequest(user.getId(), user.getUsername(), user.getPassword(), user.getEmail(), user.getRole(), reservationRepository.findByUserId(user.getId()).stream().map(reservation -> new Reservation(reservation.getId(), reservation.getDescription(), reservation.getDate(), reservation.getUser()))
+            return userRepository.findAll().stream().map(user -> new AuthRequest(user.getId(), user.getUsername(), user.getPassword(), user.getEmail(), user.getPoints(), user.getRole(), reservationRepository.findByUserId(user.getId()).stream().map(reservation -> new ReservationRequest(reservation.getId(), reservation.getDescription(), reservation.getDate(), reservation.getUser().getId()))
                             .collect(Collectors.toList())))
                     .collect(Collectors.toList());
         } else {
@@ -70,12 +73,12 @@ public class AuthService {
 
     public void deleteUser(Long userId) {
         User user = userRepository.findById(userId)
-                .orElseThrow(() -> new RuntimeException("task no encontrado"));
+                .orElseThrow(() -> new RuntimeException("usuario no encontrado"));
         User currentUser = getCurrentUser();
         if (currentUser.getRole() == Role.ADMIN) {
             userRepository.delete(user);
         } else {
-            throw new RuntimeException("No tienes autorización para borrar este task");
+            throw new RuntimeException("No tienes autorización para borrar este usuario");
         }
     }
 

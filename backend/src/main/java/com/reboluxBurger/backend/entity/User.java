@@ -31,15 +31,15 @@ public class User implements UserDetails {
     @Column(nullable = false, unique = true)
     private String email;
 
-    @Column(nullable = false)
-    private Number points;
+    @Column
+    private Long points;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Role role; // ADMIN, USER
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Reservation> tasks;
+    private List<Reservation> reservations;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
