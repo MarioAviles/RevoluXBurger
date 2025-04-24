@@ -1,6 +1,5 @@
 package com.reboluxBurger.backend.dto;
 
-import com.reboluxBurger.backend.entity.Reservation;
 import com.reboluxBurger.backend.enums.Role;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,6 +13,7 @@ public class AuthRequest {
     private String username;
     private String password;
     private String email;
+    private Long points;
     private Role role;
-    private List<Reservation> reservations;
+    private List<ReservationRequest> reservations;
 }
