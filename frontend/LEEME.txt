@@ -1,0 +1,2 @@
+PAQUETES A INSTALAR PARA LA CORRECTA FUNCIONALIZACIÓN DEL PROYECTO
+react-router-dom -> npm install --force react-router-dom
