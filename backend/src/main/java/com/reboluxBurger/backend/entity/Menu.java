@@ -30,7 +30,11 @@ public class Menu {
     @Column (nullable = false)
     private Type type;
 
-    @Column(nullable = false)
-    private Boolean gluten;
+    @Column (nullable = false)
+    private Long points;
+
+    @Column (nullable = false)
+    private String imageUrl;
+
 
 }

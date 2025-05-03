@@ -1,6 +1,7 @@
 package com.reboluxBurger.backend.enums;
 
 public enum Type {
-    Medallion,
+    Medallón,
+    Vegana,
     Smash
 }

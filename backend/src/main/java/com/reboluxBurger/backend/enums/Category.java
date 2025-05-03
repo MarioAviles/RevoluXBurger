@@ -1,7 +1,7 @@
 package com.reboluxBurger.backend.enums;
 
 public enum Category {
-    Hamburguesa,
+    Burger,
     Entrante,
     Postre,
     Bebida
