@@ -24,10 +24,11 @@ public class Menu {
     @Column(nullable = false)
     private String description;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Category category;
 
-    @Column (nullable = false)
+    @Enumerated(EnumType.STRING)
     private Type type;
 
     @Column (nullable = false)
@@ -35,6 +36,16 @@ public class Menu {
 
     @Column (nullable = false)
     private String imageUrl;
+
+    public Menu(Long id, String name, String description, Category category, Long points, String imageUrl) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.category = category;
+        this.points = points;
+        this.imageUrl = imageUrl;
+        this.type = null;
+    }
 
 
 }
