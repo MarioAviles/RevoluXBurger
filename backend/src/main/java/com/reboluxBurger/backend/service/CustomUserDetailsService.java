@@ -14,7 +14,6 @@ public class CustomUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         // Lógica para cargar el usuario desde la base de datos
-        // Asegúrate de devolver un objeto de tipo UserDetails
         return new org.springframework.security.core.userdetails.User(
                 username,
                 "contraseñaEncriptada",
