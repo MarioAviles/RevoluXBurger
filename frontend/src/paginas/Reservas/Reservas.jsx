@@ -2,7 +2,7 @@ import './Reservas.css';
 
 const Reservas = () => {   
     return (
-        <div className="container-reservas container mt-5">
+        <div className="container-reservas container-fluid mt-5">
             <h1>Reservar Mesa</h1>
             <form>
                 <div className="mb-3">

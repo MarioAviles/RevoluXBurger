@@ -9,6 +9,8 @@
     position: relative; 
     margin: 0;
     padding: 0;
+    animation: fade-in 1.5s ease-in-out;
+
 }
 
 /* Superposición con opacidad */
@@ -29,7 +31,7 @@
 
 /* Título principal */
 .hero-title {
-    font-size: 4rem;
+    font-size: 5rem;
     font-weight: bold;
     margin-bottom: 1rem;
     font-family: "Bebas Neue", sans-serif;
@@ -38,8 +40,9 @@
 
 /* Subtítulo */
 .hero-subtitle {
-    font-size: 1.5rem;
-    font-weight: 300;
+    font-size: 2rem;
+    font-weight: 400;
+    font-family: "Poppins", sans-serif;
 }
 
 /* Sección del menú */
@@ -77,7 +80,6 @@
     font-size: larger;
     margin: 2rem;
     display: flex;
-
 }
 
 /* Imagen específica para cada caja */
@@ -127,3 +129,54 @@
     margin: 1rem;
     color: #fab73d; /* Color dorado */
 }
+
+
+.puntos-section {
+    background-color: #343a40; /* Fondo gris oscuro / Header */
+    color: #ffffff; 
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 3px;
+}
+
+/* Texto de la sección de puntos */
+.texto-puntos {
+    font-size: 1.5rem;
+    color: #ffffff; 
+    margin-bottom: 1.5rem;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 2px;
+}
+
+.moneda {
+    width: 250px;
+    height: 250px;
+    transition: transform 0.7s ease; /* Transiciones suaves */
+
+}
+
+.moneda:hover {
+    transform: rotate(360deg) scale(1.15) translateY(-10px); /* Rotación, escalado y movimiento hacia arriba */
+}
+
+
+/* Botón de registro */
+.btn-registrarse {
+    background-color: #ffc107; 
+    color: #212529; 
+    padding: 0.75rem 1.5rem;
+    font-size: 1.2rem;
+    font-family: "Bebas Neue", sans-serif;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-registrarse:hover {
+    background-color: #fab73d; 
+    color: #ffffff; 
+}
+
+  
+  

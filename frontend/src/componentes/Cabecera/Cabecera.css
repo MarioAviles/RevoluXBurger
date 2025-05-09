@@ -7,8 +7,8 @@
     z-index: 1030;
     background-color: #343a40;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    animation: fade-in 0.8s ease-in-out;
 }
-
 
 
 /* Logo centrado y más grande */
@@ -46,3 +46,26 @@
         max-height: 100px;
     }
 }
+
+.fade-in {
+	-webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@-webkit-keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  

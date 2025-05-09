@@ -4,7 +4,8 @@ import logoRevoluX from '../../assets/img/logoRevoluXBuenoD.png';
 
 const Cabecera = () => {
   return (
-    <header className="cabecera">
+    
+    <header className="cabecera container-fluid text-center">
       <nav className="navbar navbar-expand-md navbar-dark">
         <div className="container-fluid d-flex flex-column align-items-center">
           
@@ -38,7 +39,7 @@ const Cabecera = () => {
                 <Link className="nav-link" to="/reservas">Reservas</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/login">Login</Link>
+                <Link className="nav-link" to="/login">Xcoins</Link>
               </li>
             </ul>
           </div>
