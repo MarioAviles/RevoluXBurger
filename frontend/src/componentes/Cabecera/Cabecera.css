@@ -13,10 +13,10 @@
 
 /* Logo centrado y más grande */
 .logo {
-    max-height: 150px;
+    max-height: 250px;
     height: auto;
     width: auto;
-    padding-bottom: 15px;
+    padding-bottom: 5px;
 }
 
 /* Menú estilizado */
@@ -25,7 +25,7 @@
 }
 
 .navbar-nav .nav-link {
-    color: #fab73d;
+    color: #FCB300;
     font-size: 1.2rem;
     transition: 0.5s;
     padding-bottom: 15px;

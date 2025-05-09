@@ -1,6 +1,6 @@
 import './Cabecera.css';
 import { Link } from 'react-router-dom';
-import logoRevoluX from '../../assets/img/logoRevoluXBuenoD.png';
+import logoRevoluX from '../../assets/img/logoRevoluXAmarillo.png';
 
 const Cabecera = () => {
   return (

@@ -9,7 +9,7 @@ const Footer = () => {
                     {/* Logo */}
                     <div className="col-12 col-md-4 mb-3">
                         <img 
-                            src="../../src/assets/img/logoRevoluxBuenoD.png" 
+                            src="../../src/assets/img/logoRevoluXAmarillo.png" 
                             alt="Logo MUESTRAMELO" 
                             className="footer-logo"
                         />

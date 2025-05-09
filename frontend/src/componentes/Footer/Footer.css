@@ -9,7 +9,7 @@
 
 /* Logo */
 .footer-logo {
-    max-width: 150px;
+    max-width: 250px;
     height: auto;
     margin: 0 auto;
 }
@@ -17,7 +17,7 @@
 /* Títulos del footer */
 .footer-title {
     font-size: 1.5rem;
-    color: #fab73d; /* Color dorado */
+    color: #FCB300; /* Color dorado */
     margin-bottom: 1rem;
 }
 
@@ -48,4 +48,10 @@
     font-size: 1.2rem;
     color: #ffffff;
     margin-top: 2rem;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
