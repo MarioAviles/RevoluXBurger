@@ -9,7 +9,9 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class ReservationRequest {
     private Long id;
+    private String name;
     private String description;
+    private String phone;
     private LocalDateTime date;
     private Long user_id;
 }

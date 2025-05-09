@@ -1,8 +1,12 @@
 package com.reboluxBurger.backend.init;
 
 import com.reboluxBurger.backend.entity.Menu;
+import com.reboluxBurger.backend.entity.User;
+import com.reboluxBurger.backend.enums.Role;
 import com.reboluxBurger.backend.repository.MenuRepository;
+import com.reboluxBurger.backend.repository.UserRepository;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
@@ -15,9 +19,13 @@ import static com.reboluxBurger.backend.enums.Type.*;
 public class DataInitializer implements CommandLineRunner {
 
     private final MenuRepository menuRepository;
+    private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
-    public DataInitializer(MenuRepository menuRepository) {
+    public DataInitializer(MenuRepository menuRepository, UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.menuRepository = menuRepository;
+        this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @Override
@@ -59,6 +67,22 @@ public class DataInitializer implements CommandLineRunner {
                     
                     ));
             System.out.println("Datos iniciales cargados");
+        }
+        if (userRepository.findByUsername("anonymous").isEmpty()) {
+            User anonymousUser = new User();
+            anonymousUser.setUsername("anonymous");
+            anonymousUser.setPassword(passwordEncoder.encode("anonymous")); // nunca se va a usar para login real
+            anonymousUser.setEmail("anonymousUser@email.com");
+            anonymousUser.setRole(Role.USER); // o crea un rol especial si quieres: Role.ANONYMOUS
+            userRepository.save(anonymousUser);
+        }
+        if (userRepository.findByUsername("admin").isEmpty()) {
+            User adminUser = new User();
+            adminUser.setUsername("admin");
+            adminUser.setPassword(passwordEncoder.encode("admin")); // nunca se va a usar para login real
+            adminUser.setEmail("admin@email.com");
+            adminUser.setRole(Role.ADMIN); // o crea un rol especial si quieres: Role.ANONYMOUS
+            userRepository.save(adminUser);
         }
     }
 }

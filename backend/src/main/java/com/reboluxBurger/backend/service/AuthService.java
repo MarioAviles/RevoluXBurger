@@ -62,7 +62,7 @@ public class AuthService {
     public List<AuthRequest> getAllUsers() {
         User currentUser = getCurrentUser();
         if (currentUser.getRole() == Role.ADMIN) {
-            return userRepository.findAll().stream().map(user -> new AuthRequest(user.getId(), user.getUsername(), user.getPassword(), user.getEmail(), user.getPoints(), user.getRole(), reservationRepository.findByUserId(user.getId()).stream().map(reservation -> new ReservationRequest(reservation.getId(), reservation.getDescription(), reservation.getDate(), reservation.getUser().getId()))
+            return userRepository.findAll().stream().map(user -> new AuthRequest(user.getId(), user.getUsername(), user.getPassword(), user.getEmail(), user.getPoints(), user.getRole(), reservationRepository.findByUserId(user.getId()).stream().map(reservation -> new ReservationRequest(reservation.getId(), reservation.getName(), reservation.getDescription(), reservation.getPhone(), reservation.getDate(), reservation.getUser().getId()))
                             .collect(Collectors.toList())))
                     .collect(Collectors.toList());
         } else {
