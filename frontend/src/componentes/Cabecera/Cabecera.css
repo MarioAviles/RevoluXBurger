@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+/* Cabecera fija y full width */
+
+
+.cabecera {
+    width: 100%;
+    z-index: 1030;
+    background-color: #343a40;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+
+/* Logo centrado y más grande */
+.logo {
+    max-height: 150px;
+    height: auto;
+    width: auto;
+    padding-bottom: 15px;
+}
+
+/* Menú estilizado */
+.navbar-nav .nav-item {
+    margin: 0 1rem;
+}
+
+.navbar-nav .nav-link {
+    color: #fab73d;
+    font-size: 1.2rem;
+    transition: 0.5s;
+    padding-bottom: 15px;
+    padding-top: 10px;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 3px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+/* Responsive: logo más pequeño en pantallas muy estrechas */
+@media (max-width: 576px) {
+    .logo {
+        max-height: 100px;
+    }
+}
